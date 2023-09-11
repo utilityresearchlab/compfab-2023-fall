@@ -1,4 +1,3 @@
-
 // Global Variables
 int counter = 0;
 
@@ -8,7 +7,6 @@ void setup() {
  println("Set-up!");
  println("Counter: ", counter);
 }
-
 
 // Called repeatedly (a loop)
 // Handles all your apps logic
