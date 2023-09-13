@@ -10,19 +10,19 @@ void setup() {
 
 void draw() {
   // Clear background with white
-    background(230, 230, 230);
-    
-    // Draw black point at mouse location, when 
-    // the mouse is pressed
-    stroke(0, 0, 0);
-    strokeWeight(20);
-    if (mousePressed) {
-      point(mouseX, mouseY);
-    }
-    
+  background(230, 230, 230);
+  
+  // Draw black point at mouse location 
+  // when the mouse is pressed
+  stroke(0, 0, 0);
+  strokeWeight(20);
+  if (mousePressed) {
     point(mouseX, mouseY);
+  }
+  
+  point(mouseX, mouseY);
 
-    // Draw red point at center
-    stroke(255, 0, 0);
-    point(width/2, height/2);
+  // Draw red point at center
+  stroke(255, 0, 0);
+  point(width/2, height/2);
 }
