@@ -1,9 +1,15 @@
-// ExampleLSystem - contains initialization functions
+// ExampleLSystemDesigns - contains initialization methods
 // to set up parameters and init the LSystem (from the main file)
 
 import java.util.HashMap;
 
-// This function returns an initialized LSystem for a "Square based L-System"
+// [TODO]: create your own L-System initialization methods
+// and use/test in the setup() method of L1LSystemAssignment file. 
+// See example for Square Lsystem below.
+
+// Square Lsystem initialization 
+// This method returns an Lsystem object that uses
+// The rules and axioms for a square based system
 LSystem initSquare() {
   // initialize turtle variables
   float moveDist = 10;
@@ -17,8 +23,6 @@ LSystem initSquare() {
   HashMap<Character, String> rules = new HashMap<>();
   rules.put('F', "F+F-F-FF+F+F-F");
     
-  // Create the Lsystem
+  // Create and return the Lsystem
   return new LSystem(axiom, rules, moveDist, rotateAngle, scaleFactor);
 }
-
-// TODO: create your own L-System initialization functions
