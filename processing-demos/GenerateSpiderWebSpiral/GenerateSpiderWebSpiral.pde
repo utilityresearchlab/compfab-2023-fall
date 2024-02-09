@@ -43,7 +43,6 @@ void draw() {
     float cY = height / 2;
     float endX = cX + getPolarX(radius, i);
     float endY = cY + getPolarY(radius, i);
-    println(endX, endY);
     line(cX, cY, endX, endY);
   }
 }
