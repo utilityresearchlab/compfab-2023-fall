@@ -29,6 +29,8 @@ void setup() {
   
   // Initialize an L-System using 
   // a method in ExampleLSystemDesigns
+  // [TODO]: call your L-system designs methods below
+  // to create your l-system
   lSys = initSquare();
   
   // Don't loop the draw function

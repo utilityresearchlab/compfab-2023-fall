@@ -84,10 +84,7 @@ public abstract class BaseLSystem {
   
   // Prints the LSystem's state but limits the string length to 1000
   public void printState() {
-    println("n = ", iterationNum, " : ", 
-      currentIterationBuffer.length() <= 1000 
-        ? currentIterationBuffer
-        : String.format("String length %d is too long to display.", currentIterationBuffer.length()));
+    println("n = ", iterationNum, " : ", currentIterationBuffer);
   }
   
   public void printIterationNumber() {
