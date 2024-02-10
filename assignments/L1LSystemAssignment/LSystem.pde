@@ -50,14 +50,14 @@ class LSystem extends BaseLSystem {
   // This function uses the turtle to draw based on each character in the LSystem's 
   // iteration string. It also handles scaling the moveDistance (to keep the image in frame), if desired
   public void drawLSystem(Turtle t) {
-    // Get the current iteration numbers
-    int iterationNum = this.getIterationNum();
-    
-    // Scale the move distance (if needed)
+    // Our turtle's move distance
     float dist = this.moveDistance;
     
-    // Helps keep the image in frame when it gets too big
-    if (scaleFactor != 1) {
+    // Scale the movement, if necessary, to help keep the image in frame 
+    // when it gets too big
+    if (scaleFactor != 0) {
+      // Get the current iteration number for scaling 
+      int iterationNum = this.getIterationNum();
       dist = dist / (scaleFactor * (iterationNum + 1));
     }
     
