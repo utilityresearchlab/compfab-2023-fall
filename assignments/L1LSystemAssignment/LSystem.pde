@@ -3,8 +3,10 @@
 // without repeating lots of code.
 // It assumes all input vocabulary not given a rule are constants. 
 // Though you could give an explicit rule for a constant using "F" --> "F"
-// It uses StringBuffer to handle replacing characters in production rules
-// in order to avoid wasteful creation of strings and memory problems
+// It contains a StringBuffer (currentIterationBuffer) that should be used
+// to handle production rules when computing the currentIteration string as part of iterate
+// in order avoid wasteful creation of strings and memory problems.
+// The StringBuffer is used in the iterate method of the LSystem.
 // @author: @mriveralee
 import java.util.HashMap;
 
@@ -29,7 +31,7 @@ class LSystem extends BaseLSystem {
   }
   
   // runs 1 iteration, performing the rules for each character
-  // on the current string. The result of the replacement is added to the 
+  // on the current string. The result of the replacement is added to the currentIterationBuffer.
   public void iterate() {
     // get a copy of the current iteration string
     String current = this.getIterationString();
