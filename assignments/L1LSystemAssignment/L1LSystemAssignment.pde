@@ -114,8 +114,9 @@ void resetTurtle() {
   t.penUp();
   t.clearTurtleHistory();
   
-  // NOTE: You can change the start position if the image doesn't fit.
-  t.goToPoint(width/2, height-20);
+  // NOTE: You can change the start position below if the image doesn't fit.
+  // y = height-20 works well if you need to draw a tree at the bottom
+  t.goToPoint(width / 2, height / 2);
   t.setHeading(0);
   t.penDown();
 }
