@@ -4,7 +4,7 @@ Turtle t;
 
 float foodX;
 float foodY;
-float foodSize = 20;
+float foodSize;// = 20;
 
 void setup() {
   size(900, 900);
@@ -23,6 +23,7 @@ void setup() {
 void generateFood() {
   foodX = random(20, width - 20);
   foodY = random(20, height - 20);
+  foodSize = random(5, 20);
 }
 
 void draw() {
