@@ -41,6 +41,9 @@ void draw() {
   
   // Now draw the updated ball 
   OUR_BALL.draw();
+  
+  // Draw the floor
+  drawFloor(FLOOR_Y);
 }
 
 // This function first applies any constraints to the system
@@ -104,5 +107,9 @@ void applyConstraints() {
     OUR_BALL.velY = -1 * DAMPING_FACTOR * OUR_BALL.velY;
     //OUR_BALL.velX = 0.9 * OUR_BALL.velX;
   }
+}
+
+void drawFloor(float yPos) {
+  line(0, yPos, width, yPos);
 }
  
