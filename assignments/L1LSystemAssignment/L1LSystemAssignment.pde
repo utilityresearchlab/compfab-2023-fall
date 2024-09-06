@@ -5,8 +5,12 @@
 // Note: This sketch uses the Turtle library which can be downloaded from
 // https://github.com/leahbuechley/Turtle
 import processing.svg.*;
+import processing.pdf.*;
 
 import Turtle.*;
+
+// Set to true to export as a PDF; false for SVG
+boolean shouldExportAsPDF = true;
 
 // How many l-system iterations to do before drawing
 // Press 'm' to increase by 1; 'n' to decrease by 1 (min = 0);
@@ -81,9 +85,10 @@ void keyPressed() {
       // Export as SVG
       //press the 's' key to save a svg of your drawing
       if (key == 's') {
+        String fileType = (shouldExportAsPDF) ? ".pdf" : ".svg";
         // Name of the output file is "lsystem-" with a date string 
-        String fileName = "output/lsystem-" + getDateString() + ".svg";
-        beginRecord(SVG, fileName);
+        String fileName = "output/lsystem-" + getDateString() + fileType;
+        beginRecord((shouldExportAsPDF) ? PDF : SVG, fileName);
         draw();
         endRecord();
         println("Saved to file: " + fileName);
