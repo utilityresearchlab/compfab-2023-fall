@@ -1,11 +1,16 @@
 // Create some ellipses
-// Pressing 's' saves the drawing as
-// an SVG file in the "output" directory
-// of the sketch folder
+// Use the size function to export a PDF directly
+// NO Drawing window will open -- check the console output.
+
 import processing.pdf.*;
 
+// Make file name with the currrent date/time
+String folder = "output";
+String fileName = folder + "/" + "drawing-" + getDateString() + ".pdf";
+
 void setup() {
-  size(800, 800);
+  // Call size function with window size + PDF + filename for output
+  size(800, 800, PDF, fileName);
   // No Looping on draw so we can export easily
   noLoop();
 }
@@ -20,22 +25,12 @@ void draw() {
   ellipse(width/2, height/3, 220, 35);
   ellipse(width/2, height/3, 60, 400);
   ellipse(width/2, height/3, 100, 240);
+  
+  // Exit the window
+  println("Saved to file: " + fileName);
+  println("Finished saving.");
+  exit();
 }
-
-// Handles key press events
-void keyPressed() { 
-  // press 's' to save a svg of your drawing
-  if (key == 's') {
-    // Make file name with the currrent date/time
-    String folder = "output";
-    String fileName = "drawing-" + getDateString() + ".pdf";
-    beginRecord(PDF, folder + "/" + fileName);
-    setup();
-    draw();
-    endRecord();
-    println("Saved to file: " + fileName);
-  }
-} 
 
 // Generates a date string of the format year_month_day-hour_min_second
 String getDateString() {
