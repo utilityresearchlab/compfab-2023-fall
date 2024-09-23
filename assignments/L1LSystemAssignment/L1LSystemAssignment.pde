@@ -33,7 +33,7 @@ void setup() {
   
   // Initialize an L-System using 
   // a method in ExampleLSystemDesigns
-  // [TODO]: call your L-system designs methods below
+  // [TODO]: call your L-system design method below
   // to create your l-system
   lSys = initSquare();
   
@@ -89,6 +89,7 @@ void keyPressed() {
         // Name of the output file is "lsystem-" with a date string 
         String fileName = "output/lsystem-" + getDateString() + fileType;
         beginRecord((shouldExportAsPDF) ? PDF : SVG, fileName);
+        setup();
         draw();
         endRecord();
         println("Saved to file: " + fileName);
