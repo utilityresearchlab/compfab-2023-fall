@@ -50,7 +50,7 @@ void draw() {
   
   // Reset the turtle position and angle
   resetTurtle();
-  
+ 
   // Reset the L-System's State
   lSys.reset();
   
@@ -109,7 +109,7 @@ void printInstructions() {
   println("======== L-System Instructions ========");
   println("Press 'm' to increment the L-system iterations.");
   println("Press 'n' to decrement the L-system iterations.");
-  println("Press 's' to save an SVG.");
+  println("Press 's' to save to PDF/SVG.");
   println("=======================================");
 
 }
