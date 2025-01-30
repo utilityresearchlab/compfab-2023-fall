@@ -38,7 +38,7 @@ void draw() {
   // Draw the lines connecting the different circles
   for(int i = 0; i < 360; i += random(5, 20)) {
     strokeWeight(1);
-    float radius = random(dist, 0.99 * dist);
+    float radius = random(0.9 * dist, 0.99 * dist);
     float cX = width / 2;
     float cY = height / 2;
     float endX = cX + getPolarX(radius, i);
