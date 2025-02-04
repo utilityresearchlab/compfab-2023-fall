@@ -1,4 +1,3 @@
-// Generates a Snail Shell using turtle + polar coordinates
 import Turtle.*;
 
 Turtle t;  
@@ -29,7 +28,7 @@ void drawHex(float l) {
   t.right(60);
   t.forward(l);
   t.right(60);
-  t.forward(sideLength);
+  t.forward(l);
   t.right(60);
   //t.drawTurtle();
 }
@@ -64,14 +63,4 @@ void draw() {
       t.penDown();
     }
   }
-}
-
-// Theta is in degrees
-float getPolarX(float radius, float theta) {
-  return radius * cos(radians(theta));
-}
-
-// Theta is in degrees
-float getPolarY(float radius, float theta) {
- return radius * sin(radians(theta)); 
 }
