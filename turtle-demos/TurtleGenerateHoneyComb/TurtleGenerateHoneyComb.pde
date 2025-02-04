@@ -1,37 +1,15 @@
-// Generates a Snail Shell using turtle + polar coordinates
+// Generates a Honeycomb using turtle and partial hexagons
 import Turtle.*;
 
 Turtle t;  
-int sideLength = 15;
 
 void setup() {
   size(800, 800);
   frameRate(120);
   t = new Turtle(this);
   noLoop();
-  t.left(30);
-  t.penUp();
-  //t.goToPoint(0, 2 * sideLength);
-  t.penDown();
-}
-
-void drawHex(int l) {
-  t.left(60);
-  t.forward(l);
-  t.right(60);
-  t.forward(l);
-  t.right(60);
-  t.forward(l);
-  t.right(60);
-  t.forward(l);
-  t.right(60);
-  t.forward(l);
-  t.right(60);
-  t.forward(l);
-  t.right(60);
-  t.forward(sideLength);
-  t.right(60);
-  //t.drawTurtle();
+  // Set turtle to face 0 degrees (to the right)
+  t.setHeading(0);
 }
 
 void draw() {
@@ -39,42 +17,59 @@ void draw() {
   background(0);
   stroke(255);
   noFill();
+  int sideLength = 30;
+  float hexHeight = sqrt(3) * sideLength;
+  
   //float shiftR = 0.5* tan(radians(30)) * sideLength;
-  int rowCount = round(height / (2 * sideLength));
-  int colCount = round(width / (1.5 * sideLength));
+  int rowCount = round(height / hexHeight) + 1;
+
   for (int i = 0; i < rowCount; i += 1) {
-    int startX = 0;
-    int startY = i * 2 * sideLength;
+    float startX = 0;
+    float startY = i * sqrt(3) * sideLength;
     t.penUp();
     t.goToPoint(startX, startY);
     t.penDown();
+    
     // Randomly generate width count of hexes
-    int hexCount = colCount;  //round(random(4) * colCount);
+    int hexCount = ceil(width / (2.0 * sideLength));
+    t.setHeading(30);
     for (int j = 0; j < hexCount; j += 1) {
-      drawHex(sideLength);
-      // Shift over
-      t.penUp();    
-      // TODO: calculation of hex radius 
-      if (j % 2 == 0) {
-        t.goToPoint(
-          t.getX() + 2.5 * sideLength, 
-          t.getY() + sideLength);
-      } else {
-        t.goToPoint(
-          t.getX() + 2.5*sideLength, 
-          t.getY() - sideLength);
-      }
-      t.penDown();
+      // Top row
+      drawTopHalfHex(sideLength);
+      t.left(120);
+      t.forward(sideLength);
+      t.left(60);
+    }
+    
+    // Reset to start position
+    t.penUp();
+    t.goToPoint(startX, startY);
+    t.penDown();
+
+   // Draw bottom row
+   for (int j = 0; j < hexCount; j += 1) {
+      // Bottom Row
+      drawBottomHalfHex(sideLength);
+      t.right(120);
+      t.forward(sideLength);
+      t.right(60);
     }
   }
 }
 
-// Theta is in degrees
-float getPolarX(float radius, float theta) {
-  return radius * cos(radians(theta));
+// Draws the top half of hexagons /--\__
+void drawTopHalfHex(int l) {
+  for (int i = 0; i < 3; i += 1) {
+    t.forward(l);
+    t.right(60);
+  }
 }
 
-// Theta is in degrees
-float getPolarY(float radius, float theta) {
- return radius * sin(radians(theta)); 
+// Draws the bottom half of hexagons \_/--
+void drawBottomHalfHex(int l) {
+  t.setHeading(150);
+  for (int i = 0; i < 3; i += 1) {
+    t.forward(l);
+    t.left(60);
+  }
 }

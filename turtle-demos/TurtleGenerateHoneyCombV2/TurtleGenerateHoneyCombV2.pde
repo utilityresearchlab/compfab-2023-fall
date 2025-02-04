@@ -1,4 +1,4 @@
-// Generates a Snail Shell using turtle + polar coordinates
+// Generates a Honeycomb using turtle + draw hex
 import Turtle.*;
 
 Turtle t;  
