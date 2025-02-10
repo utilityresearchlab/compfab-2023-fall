@@ -1,4 +1,5 @@
-// ExampleLSystemDesigns - contains initialization methods
+// ExampleLSystemDesigns - contains helper methods to create and 
+// initialize an LSystem
 // to set up parameters and init the LSystem (from the main file)
 
 import java.util.HashMap;

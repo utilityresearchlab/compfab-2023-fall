@@ -1,10 +1,11 @@
 // This is an abstract class (cannot be instantiated directly)
+// DO NOT EDIT THIS CLASS
 // It is used to share methods/variables between the various
 // types of L-Systems you can have (regular, probablistic, etc).
 // It contains a StringBuffer (currentIterationBuffer) that should be used
 // to handle production rules when computing the currentIteration string as part of iterate
 // in order avoid wasteful creation of strings and memory problems.
-// Note that iterate and drawLSystem must be implemented as part of any subclass.
+// Note that the iterate and drawLSystem must be implemented as part of any subclass.
 public abstract class BaseLSystem {
   
   //-------------------------------------------
