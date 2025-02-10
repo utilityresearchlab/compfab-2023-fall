@@ -19,11 +19,11 @@ void draw() {
   for (int i = 0; i < 5; i += 1) {
      t.forward(size);
      t.push();
-     t.right(55);
+     t.right(45);
      t.forward(size);
      t.pop();
      t.push();
-     t.left(45);
+     t.left(55);
      t.forward(size);
      t.pop();
      // t.drawTurtle();
