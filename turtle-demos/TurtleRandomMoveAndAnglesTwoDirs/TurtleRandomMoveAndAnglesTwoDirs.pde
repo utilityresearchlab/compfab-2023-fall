@@ -25,9 +25,9 @@ void draw() {
     t.right(randAngleDist);
     t.forward(randMoveDist);
   } else {
-  t.back(randMoveDist);
-  t.left(randAngleDist);
-  t.back(randMoveDist);
+    t.back(randMoveDist);
+    t.left(randAngleDist);
+    t.back(randMoveDist);
   }
   t.pop();
   // t.drawTurtle();
