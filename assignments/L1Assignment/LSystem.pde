@@ -12,7 +12,7 @@ import java.util.HashMap;
 
 class LSystem extends BaseLSystem {
   
- // Production rules
+  // Production rules
   private HashMap<Character, String> rules;
 
   // Constructor for making an Lsystem object

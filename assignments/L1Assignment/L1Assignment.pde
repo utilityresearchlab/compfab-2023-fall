@@ -87,7 +87,7 @@ void keyPressed() {
       if (key == 's') {
         String fileType = (shouldExportAsPDF) ? ".pdf" : ".svg";
         // Name of the output file is "lsystem-" with a date string 
-        String fileName = "output/lsystem-" + getDateString() + fileType;
+        String fileName = "output/lsys-" + getDateString() + fileType;
         beginRecord((shouldExportAsPDF) ? PDF : SVG, fileName);
         setup();
         draw();
@@ -107,8 +107,8 @@ String getDateString() {
 // Prints some basic instructions for key presses to the console
 void printInstructions() {
   println("======== L-System Instructions ========");
-  println("Press 'm' to increment the L-system iterations.");
-  println("Press 'n' to decrement the L-system iterations.");
+  println("Press 'm' to increment the iterations.");
+  println("Press 'n' to decrement the iterations.");
   println("Press 's' to save to PDF/SVG.");
   println("=======================================");
 
