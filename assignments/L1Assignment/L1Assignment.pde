@@ -1,4 +1,4 @@
-// The main processing sketch for running the L1LSystemAssignment code
+// The main processing sketch for running the L1Assignment code
 // Handles incrementing/decrementing the iterations using keyPress events ('m' & 'n')
 // Output can be saved by pressing 's'.
 // @author: @mriveralee
