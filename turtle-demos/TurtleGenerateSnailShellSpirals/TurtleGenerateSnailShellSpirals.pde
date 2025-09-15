@@ -17,7 +17,7 @@ void draw() {
   stroke(255);
   noFill();
 
-  float dist = 0.05;
+  float dist = 0.05; // small change each movement
 
   int rotationCount = 20;
   // Repeat the spiral
@@ -27,18 +27,23 @@ void draw() {
     float startY = t.getY();
     
     // Draw the sprial, but add deviation in the end angle to change shell edge.
-    for(int j = 0; j < random(360, 362); j += 1) {
+    for(int theta = 0; theta < random(360, 362); theta += 1) {
         // Draw the lines connecting the different circles
         strokeWeight(1);
-        float rad = radians(j);
-        float radius = baseRadius + i*j * dist + random(3, 3.5);
+ 
+        // Radius as a function of angle 
+        float radius = baseRadius + i * theta * dist;;
+        
+        // Center point
         float cX = width / 2;
         float cY = height / 2;
-        float endX = cX + radius * cos(rad);
-        float endY = cY + radius * sin(rad);
+        
+        // Add center point to the polarX and polarY position to get a new position that is radius away from the center at angle theta
+        float endX = cX + getPolarX(radius, theta);
+        float endY = cY + getPolarY(radius, theta);
         
         // Move the turtle to the next point, drawing a line between the last location and the new one
-        if (j == 0) {
+        if (theta == 0) {
           t.penUp();
           t.goToPoint(endX, endY);
           t.penDown();
@@ -61,6 +66,8 @@ void draw() {
   }
   //t.goToPoint(width/2, height/2);
 }
+
+
 
 // Theta is in degrees
 float getPolarX(float radius, float theta) {
