@@ -1,4 +1,4 @@
-// Generates a Honeycomb using turtle + draw hex
+// Generates a orthoboxes using turtle 
 import Turtle.*;
 
 Turtle t;  
