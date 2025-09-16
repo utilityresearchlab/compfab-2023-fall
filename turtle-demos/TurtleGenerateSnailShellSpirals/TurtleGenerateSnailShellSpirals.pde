@@ -32,7 +32,7 @@ void draw() {
         strokeWeight(1);
  
         // Radius as a function of angle 
-        float radius = baseRadius + i * theta * dist;;
+        float radius = baseRadius + i * theta * dist;
         
         // Center point
         float cX = width / 2;
