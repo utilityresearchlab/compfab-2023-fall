@@ -16,21 +16,10 @@ void setup() {
 
 void drawHex(float l) {
   t.left(60);
-  t.forward(l);
-  t.right(60);
-  t.forward(l);
-  t.right(60);
-  t.forward(l);
-  t.right(60);
-  t.forward(l);
-  t.right(60);
-  t.forward(l);
-  t.right(60);
-  t.forward(l);
-  t.right(60);
-  t.forward(l);
-  t.right(60);
-  //t.drawTurtle();
+  for (int i = 0; i < 6; i += 1) {
+    t.forward(l);
+    t.right(60);
+  }
 }
 
 void draw() {
