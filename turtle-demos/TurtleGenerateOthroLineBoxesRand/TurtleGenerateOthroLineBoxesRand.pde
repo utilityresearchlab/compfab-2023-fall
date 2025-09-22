@@ -8,6 +8,10 @@ void setup() {
   frameRate(120);
   t = new Turtle(this);
   noLoop();
+  long seed = millis();
+  // Set randomSeed
+  randomSeed(seed);
+  print("Random Seed: " + Long.toString(seed));
 }
 
 void draw() {
