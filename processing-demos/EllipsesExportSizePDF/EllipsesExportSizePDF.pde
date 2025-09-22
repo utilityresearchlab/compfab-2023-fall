@@ -13,6 +13,8 @@ void setup() {
   size(800, 800, PDF, fileName);
   // No Looping on draw so we can export easily
   noLoop();
+  // Set density so image isn't cut off
+  pixelDensity(1);
 }
 
 void draw() {
