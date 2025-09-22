@@ -17,6 +17,7 @@ void setup() {
 
 void draw() {
   // Set up colors
+  translate(-width/4,0);
   background(255);
   stroke(2);
   noFill();
