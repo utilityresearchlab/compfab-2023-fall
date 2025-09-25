@@ -16,9 +16,7 @@ void draw() {
   stroke(255);
   noFill();
   // Initial setup of orientation
-  t.right(30);
-  t.right(45);
-  
+  t.right(75);  
   float l = 60;
   float w = 100;
   float startX = width / 2;
